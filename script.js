@@ -47,7 +47,7 @@ function calculateCells(){
                         countCellsWithNearByOnes++;
                     }
                 }
-                if(jndex<columnsCount-2)
+                if(jndex<columnsCount-1)
                 {
                     let elementRight = table.rows[index].cells[jndex+1];//ячейка справа
                     if(elementRight.innerText == "1")
@@ -55,7 +55,7 @@ function calculateCells(){
                         countCellsWithNearByOnes++;
                     }
                 }
-                if(index<rowsCount-2)
+                if(index<rowsCount-1)
                 {
                     let elementBottom = table.rows[index+1].cells[jndex];//ячейка снизу
                     if(elementBottom.innerText == "1")
@@ -63,7 +63,7 @@ function calculateCells(){
                         countCellsWithNearByOnes++;
                     }
                 }
-                
+                console.log(countCellsWithNearByOnes)
                 if(countCellsWithNearByOnes>numberNearByCells)//если количество ячеек больше заданного
                 {
                     cellsWithZeroAndNearByOnes++;//наращиваем счетчик искомых ячеек

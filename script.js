@@ -22,7 +22,7 @@ function calculateCells(){
     let columnsCount = document.querySelectorAll("table th").length; //количество колонок
     let rowsCount = document.querySelectorAll("table tbody tr").length; //количество строк
     let cellsWithZeroAndNearByOnes =0;
-    for(let index=0;index<rowsCount;index++)//проход по строкам
+    for(let index=1;index<rowsCount+1;index++)//проход по строкам с учетом первой строки таблицы -- заголовка
     {
         for(let jndex=0;jndex<columnsCount;jndex++)//проход по колонкам
         {
@@ -31,7 +31,7 @@ function calculateCells(){
             let countCellsWithNearByOnes = 0; // количество соседних ячеек, в которых 1
             if(element.innerText == "0") // если текеущий элемент с 0, то запускаем подсчет
             {
-                if(index>0)
+                if(index>1)
                 {
                     let elementUp = table.rows[index-1].cells[jndex];//ячейка сверху
                     if(elementUp.innerText == "1")
@@ -55,7 +55,7 @@ function calculateCells(){
                         countCellsWithNearByOnes++;
                     }
                 }
-                if(index<rowsCount-1)
+                if(index<rowsCount)// с учетом строки в заголовке таблицы
                 {
                     let elementBottom = table.rows[index+1].cells[jndex];//ячейка снизу
                     if(elementBottom.innerText == "1")

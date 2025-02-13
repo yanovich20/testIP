@@ -63,7 +63,7 @@ function calculateCells(){
                         countCellsWithNearByOnes++;
                     }
                 }
-                console.log(countCellsWithNearByOnes)
+              
                 if(countCellsWithNearByOnes>numberNearByCells)//если количество ячеек больше заданного
                 {
                     cellsWithZeroAndNearByOnes++;//наращиваем счетчик искомых ячеек
